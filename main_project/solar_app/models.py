@@ -6,3 +6,9 @@ class SensorData(models.Model):
 
     def __str__(self):
         return f"Degrees: {self.degree}"
+
+class checkData(models.Model):
+    item = models.TextField()
+
+    def __str__(self):
+        return self.item
