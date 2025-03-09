@@ -1,15 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>"Solar Energy"</title>
+
+        {% comment %} <link rel="stylesheet" href={% static "style.css" %}}/> {% endcomment %}
     </head>
     <body>
-        <link rel="stylesheet" type = "text/css" href="../../static/css/style.css">
         <h1>Solar Stuff</h1>
         {% for x in data %}
             <p>{{x}}</p>
         {% endfor %}
+
+        <main>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Gimbal Data</li>
+                    <li>Investment Calculator</li>
+                </ul>
+            </nav>
+        </main>
     </body>
 </html>
