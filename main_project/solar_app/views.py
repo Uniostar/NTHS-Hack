@@ -25,4 +25,4 @@ def receive_sensor_data(request):
             return Response({"message": "Data received"}, status=201)
         else:
             print("request none")
-            return Response({"message": "Failed. Received: "}, status=400)
+            return Response({"message": "Failed. Received: " + str(sensor_value)}, status=400)
