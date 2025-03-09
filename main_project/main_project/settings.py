@@ -54,8 +54,10 @@ ROOT_URLCONF = 'main_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,  # This will enable Django to look for templates in each app's 'templates' directory
+        'DIRS': [
+            BASE_DIR / 'solar_app/templates',  # Optional: If you have global templates
+        ],
+        'APP_DIRS': True,  # This allows Django to search for templates inside each app's templates directory
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
