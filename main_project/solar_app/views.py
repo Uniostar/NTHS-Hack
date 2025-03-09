@@ -17,8 +17,11 @@ def home(request):
 @api_view(["POST"])
 def receive_sensor_data(request):
     if request.method == "POST":
+        print("Request: ", request)
         data = json.loads(request.body.decode("utf-8"))
+        print("Data: ", data)
         sensor_value = data.get("sensor_value")
+        print("Sensor: ", sensor_value)
         if not sensor_value is None:
             print("Received: ", sensor_value)
             SensorData.objects.create(sensor_value=sensor_value)
