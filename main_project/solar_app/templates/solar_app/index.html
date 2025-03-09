@@ -34,6 +34,14 @@
             </section>
 
             <section class="title">
+                <div class="flowers">
+                    <div class="flower one">
+                        <img src="../../../media/sunflower_favicon.png">
+                    </div>
+                    <div class="flower two">
+                        <img src="../../../media/sunflower_favicon.png">
+                    </div>
+                </div>
                 <div class="stalk">
                     <img src="../../../media/beanstalk.png">
                 </div>
@@ -91,15 +99,20 @@
 
                     <div class="form">
                         <h2>Solar Power Calculator</h2>
-                        <form action="calc" method="GET">
+                        {% if form %}
+                            <form action="#calc">
+                        {% else %}
+                            <form action="calc#calc" method="GET">
+                        {% endif %}
+                                
                             <div class="input">
                                 <label for="sunlight">Hours of Daily Sunlight (0-12)</label>
-                                <input id="sunlight" name="sunlight" type="number" min="0" max="12">
+                                <input id="sunlight" name="sunlight" type="number" min="0" max="12" required>
                             </div>
 
                             <div class="input">
                                 <label for="wattage">How much Wattage would you like?</label>
-                                <input id="wattage" name="wattage" type="number">
+                                <input id="wattage" name="wattage" type="number" required>
                             </div>
 
                             <button id="submit" type="submit">Calculate</button>

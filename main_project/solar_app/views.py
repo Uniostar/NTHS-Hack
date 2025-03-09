@@ -15,7 +15,8 @@ def home(request):
         "estGen": "--",
         "sav": "--",
         "co2": "--",
-        "trees": "--"
+        "trees": "--",
+        "yrs": "--"
     })
 
 def calc(request):
@@ -52,7 +53,9 @@ def calc(request):
             "estGen": estGen,
             "sav": sav,
             "co2": co2,
-            "trees": trees
+            "trees": trees,
+            "yrs": 7,
+            "form": True
         })
 
 @api_view(["POST"])
