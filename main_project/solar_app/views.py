@@ -6,7 +6,12 @@ from rest_framework.response import Response
 from .models import SensorData
 
 def home(request):
-    return render(request, "solar_app/index.html")
+    data = SensorData.objects.all().values()
+
+
+    return render(request, "solar_app/index.html", {
+        "data": data
+    })
 
 @api_view(["POST"])
 def receive_sensor_data(request):
