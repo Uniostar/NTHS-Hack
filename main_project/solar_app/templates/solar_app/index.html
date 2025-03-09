@@ -7,21 +7,126 @@
         <title>"Solar Energy"</title>
 
         <link rel="stylesheet" href={% static "solar_app/css/style.css" %}/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Solar Stuff</h1>
-        {% for x in data %}
-            <p>{{x}}</p>
-        {% endfor %}
+        <div class="clouds">
+            <!-- <img src="../../../media/cloud.png">
+            <img src="../../../media/cloud.png">
+            <img src="../../../media/cloud.png">
+            <img src="../../../media/cloud.png">
+            <img src="../../../media/cloud.png"> -->
+        </div>
 
         <main>
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Gimbal Data</li>
-                    <li>Investment Calculator</li>
-                </ul>
-            </nav>
+            <a id="home"></a>
+            <section class="nav">
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gimbal">Gimbal</a></li>
+                        <li><a href="#calc">Investment Calculator</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="title">
+                <div class="stalk">
+                    <img src="../../../media/beanstalk.png">
+                </div>
+                <h1>Project Sunflower</h1>
+            </section>
+
+            <section class="pitch">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam eius quod sit amet nesciunt? Illum, laudantium. Earum est quia, nam soluta eos ipsa, consectetur dolores nesciunt molestias dolorum aspernatur debitis.</p>
+            </section>
+
+            <section class="benefits">
+                <!-- <div class="grass">
+                    <img src="../../../media/grass.png">
+                    <img src="../../../media/grass.png">
+                    <img src="../../../media/grass.png">
+                </div> -->
+
+                <div class="text">
+                    <h2>Benefits of Solar Panels</h2>
+                    <ul>
+                        <li>a</li>
+                        <li>b</li>
+                        <li>c</li>
+                    </ul>
+                </div>
+
+                <div class="img">
+                    <img src="../../../media/solar-panel.png">
+                    <img src="../../../media/solar-panel.png">
+                </div>
+            </section>
+
+            <section class="green">
+                <a id="gimbal"></a>
+                <section class="gimbal">
+                    <h2>Gimbals</h2>
+                    <div class="infos">
+                        <div class="info">
+                            Benefit 1
+                        </div>
+                        <div class="info">
+                            Benefit 2
+                        </div>
+                        <div class="info">
+                            Benefit 3
+                        </div>
+                    </div>
+                </section>
+
+                <a id="calc"></a>
+                <section class="calculator">
+
+                    <div class="form">
+                        <h2>Solar Power Calculator</h2>
+                        <form action="calc" method="GET">
+                            <div class="input">
+                                <label for="sunlight">Hours of Daily Sunlight (0-12)</label>
+                                <input id="sunlight" name="sunlight" type="number" min="0" max="12">
+                            </div>
+
+                            <div class="input">
+                                <label for="wattage">How much Wattage would you like?</label>
+                                <input id="wattage" name="wattage" type="number">
+                            </div>
+
+                            <button id="submit" type="submit">Calculate</button>
+                        </form>
+                    </div>
+
+                    <div class="results">
+                        <div class="result">
+                            {{ trees }} trees of CO2 offset per year
+                        </div>
+                        <div class="result">
+                            {{ co2 }} lbs of CO2 offset per year
+                        </div>
+                        <div class="result">
+                            ${{ cost }} of initial investmnet
+                        </div>
+                        <div class="result">
+                            {{ yrs }} years to pay itself off
+                        </div>
+                        <div class="result">
+                            {{ estGen }}  kilowatts per month generated
+                        </div>
+                        <div class="result">
+                            ${{ sav }} of lifetime savings
+                        </div>
+                    </div>
+
+                </section>
+            </section>
+
         </main>
     </body>
 </html>
