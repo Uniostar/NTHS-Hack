@@ -16,12 +16,9 @@ def home(request):
 @api_view(["POST"])
 def receive_sensor_data(request):
     if request.method == "POST":
-        return render(request, "solar_app/index.html", {
-            "request": request
-        })
-        # sensor_value = request.data.get("sensor_value").decode("utf-8")
-        # if not sensor_value is None:
-        #     SensorData.objects.create(sensor_value=sensor_value)
-        #     return Response({"message": "Data received"}, status=201)
-        # else:
-        #     return Response({"message": "Failed"}, status=400)
+        sensor_value = request.data.get("sensor_value").decode("utf-8")
+        if not sensor_value is None:
+            SensorData.objects.create(sensor_value=sensor_value)
+            return Response({"message": "Data received"}, status=201)
+        else:
+            return Response({"message": "Failed"}, status=400)
